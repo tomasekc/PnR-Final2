@@ -125,7 +125,7 @@ class  GoPiggy(pigo.Pigo):
 
 
     def frontClear(self) -> bool:
-        for x in range((self.MIDPOINT - 5), (self.MIDPOINT + 5), 5):
+        for x in range((self.MIDPOINT - 3), (self.MIDPOINT + 3), 5):
             servo(x)
             time.sleep(.1)
             scan1 = us_dist(15)
@@ -191,19 +191,17 @@ class  GoPiggy(pigo.Pigo):
         while self.isClear():
             #Let's go forward a lot
             self.cruise()
-            if False:
-                self.superChoosePath()
         #Choosing the direction
-                answer = self.superChoosePath()
-                if answer == "left":
-                    self.encL(9)
-                elif answer == "right":
-                    self.encR(9)
-                elif answer == "There is no where to go":
-                    print("Since there's no where to go, I'll back up")
-                    self.encB(20)
-                    self.encL(15)
-                self.nav()
+            answer = self.superChoosePath()
+            if answer == "left":
+                self.encL(9)
+            elif answer == "right":
+                self.encR(9)
+            elif answer == "There is no where to go":
+                print("Since there's no where to go, I'll back up")
+                self.encB(20)
+                self.encL(15)
+            self.nav()
 
 
 
