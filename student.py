@@ -178,7 +178,7 @@ class  GoPiggy(pigo.Pigo):
         while self.frontClear():
             print("It is clear. Time to fly!")
             fwd()
-            if self.frontClear() is False:
+            if not self.frontClear():
                 self.stop()
 
 
@@ -192,7 +192,6 @@ class  GoPiggy(pigo.Pigo):
             #Let's go forward a lot
             self.cruise()
             if False:
-                self.stop()
                 self.superChoosePath()
         #Choosing the direction
                 answer = self.superChoosePath()
