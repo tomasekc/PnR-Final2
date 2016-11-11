@@ -163,12 +163,12 @@ class  GoPiggy(pigo.Pigo):
                 avgLeft += self.scan[x]
         avgLeft /= 60
         print('The average dist on the left is ' + str(avgLeft) + 'cm')
-        if avgRight > avgLeft and avgRight > self.STOP_DIST:
+        if avgRight > avgLeft: #and avgRight > self.STOP_DIST:
             return "right"
-        if avgLeft > avgRight and avgLeft > self.STOP_DIST:
+        if avgLeft > avgRight: #and avgLeft > self.STOP_DIST:
             return "left"
-        elif avgRight < self.STOP_DIST or avgLeft < self.STOP_DIST:
-            return "There is no where to go"
+        #elif avgRight < self.STOP_DIST or avgLeft < self.STOP_DIST:
+            #return "There is no where to go"
 
 
     #Moving slowly forever but still scanning
@@ -197,10 +197,10 @@ class  GoPiggy(pigo.Pigo):
                 self.encL(9)
             elif answer == "right":
                 self.encR(9)
-            elif answer == "There is no where to go":
-                print("Since there's no where to go, I'll back up")
-                self.encB(20)
-                self.encL(15)
+            #elif answer == "There is no where to go":
+                #print("Since there's no where to go, I'll back up")
+                #self.encB(20)
+                #self.encL(15)
             self.nav()
 
 
