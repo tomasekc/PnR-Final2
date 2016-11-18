@@ -114,7 +114,7 @@ class  GoPiggy(pigo.Pigo):
     def dance(self):
         print("Piggy dance")
         ##### WRITE YOUR FIRST PROJECT HERE
-        #Check if its clear using superClear method
+        # Check if its clear using superClear method
         print("Is it clear?")
         if(self.superClear()):
             print("Let's dance!")
@@ -137,30 +137,30 @@ class  GoPiggy(pigo.Pigo):
 
 
     def superClear(self):
-        #Check front distance
+        # Check front distance
         servo(self.MIDPOINT)
         time.sleep(.1)
         scan1 = us_dist(15)
         time.sleep(.5)
         print("Front Distance:" + str(us_dist(15)))
-        #Check right distance
+        # Check right distance
         servo(self.MIDPOINT - 60)
         time.sleep(.1)
         scan2 = us_dist(15)
         time.sleep(.5)
         print("Right Distance:" + str(us_dist(15)))
-        #Check left distance
+        # Check left distance
         servo(self.MIDPOINT + 60)
         time.sleep(.1)
         scan3 = us_dist(15)
         time.sleep(.5)
         print("Left Distance:" + str(us_dist(15)))
-        #Average the 3 scans
+        # Average the 3 scans
         scan0 = (scan1 + scan2 +scan3) / 3
         time.sleep(.1)
         servo(self.MIDPOINT)
         time.sleep(.5)
-        #If its safe or not to dance:
+        # If its safe or not to dance:
         if scan0 < self.STOP_DIST:
             print("There is something in the way, so I'll back up")
             time.sleep(.5)
@@ -220,8 +220,8 @@ class  GoPiggy(pigo.Pigo):
 
     #Moving slowly forever but still scanning
     def cruise(self):
-        self.setSpeed(75, 100)
-        #Have the robot drive forward without end
+        self.setSpeed(100, 100)
+        # Have the robot drive forward without end
         while self.frontClear():
             print("It is clear. Time to fly!")
             fwd()
@@ -234,13 +234,13 @@ class  GoPiggy(pigo.Pigo):
         print("Piggy nav")
         ##### WRITE YOUR FINAL PROJECT HERE
         #TODO: If while loop fails, check for other paths
-        #loop: check that it's clear
+        # loop: check that it's clear
         while self.isClear():
-            #Let's go forward a lot
+            # Let's go forward a lot
             self.cruise()
             if not self.frontClear():
                 self.superChoosePath()
-        #Choosing the direction
+        # Choosing the direction
                 answer = self.superChoosePath()
                 if answer == "left":
                     self.turnL(45)
