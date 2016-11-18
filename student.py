@@ -17,6 +17,10 @@ class  GoPiggy(pigo.Pigo):
     RIGHT_SPEED = 200
     LEFT_SPEED = 171
 
+    turn_track = 0.0
+    TIME_PER_DEGREE = 0.010278
+    TURN_MODIFIER = .5
+
 
 
     # CONSTRUCTOR
@@ -51,6 +55,49 @@ class  GoPiggy(pigo.Pigo):
         #
         ans = input("Your selection: ")
         menu.get(ans, [None, error])[1]()
+
+
+
+    ###########
+    ####MY NEW TURN METHODS because others just don't make the cut
+    ###########
+    #takes number of degrees and turns right accordingly
+    def turnR(self, deg):
+        #adjust the tracker so we know how many degrees our exit is
+        self.turn_track += deg
+        print("The exit is " + str(self.turn_track) + " degrees away.")
+        self.setSpeed(self.RIGHT_SPEED * self.TURN_MODIFIER,
+                      self.RIGHT_SPEED * self.TURN_MODIFIER)
+        #do turn stuff
+        right_rot()
+        time.sleep(deg * self.TIME_PER_DEGREE)
+        self.stop()
+        #set speed back to normal:
+        self.setSpeed(self.LEFT_SPEED, self.RIGHT_SPEED)
+
+    #takes number of degrees and turns left accordingly
+    def turnL(self, deg):
+        #adjust the tracker so we know how many degrees our exit is
+        self.turn_track -= deg
+        print("The exit is " + str(self.turn_track) + " degrees away.")
+        self.setSpeed(self.RIGHT_SPEED * self.TURN_MODIFIER,
+                      self.RIGHT_SPEED * self.TURN_MODIFIER)
+        #do turn stuff
+        left_rot()
+        time.sleep(deg * self.TIME_PER_DEGREE)
+        self.stop()
+        #set speed back to normal:
+        self.setSpeed(self.LEFT_SPEED, self.RIGHT_SPEED)
+
+
+
+    def setSpeed(self, left, right):
+        print("Left speed: " + str(left))
+        print("Right speed: " + str(right))
+        set_left_speed(left)
+        set_left_speed(right)
+        time.sleep(.05)
+
 
 
     def currentStatus(self):
@@ -196,9 +243,9 @@ class  GoPiggy(pigo.Pigo):
         #Choosing the direction
                 answer = self.superChoosePath()
                 if answer == "left":
-                    self.encL(9)
+                    self.turnL(45)
                 elif answer == "right":
-                    self.encR(9)
+                    self.turnR(45)
             #elif answer == "There is no where to go":
                 #print("Since there's no where to go, I'll back up")
                 #self.encB(20)
