@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66f0e80a-096a-43e5-81a2-c0f7565787d7" name="Default" comment="New pigo">
+    <list default="true" id="66f0e80a-096a-43e5-81a2-c0f7565787d7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student.py" afterPath="$PROJECT_DIR$/student.py" />
     </list>
@@ -27,8 +27,8 @@
       <file leaf-file-name="student.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/student.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="247" column="34" selection-start-line="247" selection-start-column="34" selection-end-line="247" selection-end-column="34" />
+            <state relative-caret-position="323">
+              <caret line="97" column="34" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="34" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -39,7 +39,7 @@
       <file leaf-file-name="pigo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pigo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-918">
+            <state relative-caret-position="-1326">
               <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
               <folding />
             </state>
@@ -297,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479305429013</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="new turn methods">
+      <created>1479479024801</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1479479024801</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -338,7 +345,8 @@
     <MESSAGE value="There's an error in the nav method" />
     <MESSAGE value="Nothing new, just tests" />
     <MESSAGE value="New pigo" />
-    <option name="LAST_COMMIT_MESSAGE" value="New pigo" />
+    <MESSAGE value="new turn methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="new turn methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -383,7 +391,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pigo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-918">
+        <state relative-caret-position="-1326">
           <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
           <folding />
         </state>
@@ -391,8 +399,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/student.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="247" column="34" selection-start-line="247" selection-start-column="34" selection-end-line="247" selection-end-column="34" />
+        <state relative-caret-position="323">
+          <caret line="97" column="34" selection-start-line="97" selection-start-column="34" selection-end-line="97" selection-end-column="34" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
