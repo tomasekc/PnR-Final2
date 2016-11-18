@@ -27,8 +27,8 @@
       <file leaf-file-name="student.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/student.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="222" column="25" selection-start-line="222" selection-start-column="25" selection-end-line="222" selection-end-column="25" />
+            <state relative-caret-position="289">
+              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -311,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479479592190</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="changing set speeds in cruise method">
+      <created>1479479786393</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1479479786393</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -354,7 +361,8 @@
     <MESSAGE value="New pigo" />
     <MESSAGE value="new turn methods" />
     <MESSAGE value="changed set speed method" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed set speed method" />
+    <MESSAGE value="changing set speeds in cruise method" />
+    <option name="LAST_COMMIT_MESSAGE" value="changing set speeds in cruise method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -407,8 +415,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/student.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="222" column="25" selection-start-line="222" selection-start-column="25" selection-end-line="222" selection-end-column="25" />
+        <state relative-caret-position="289">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
