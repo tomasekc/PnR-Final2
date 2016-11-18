@@ -14,8 +14,8 @@ class  GoPiggy(pigo.Pigo):
     # You may want to add a variable to store your default speed
     MIDPOINT = 83
     STOP_DIST = 20
-    RIGHT_SPEED = 200
-    LEFT_SPEED = 190
+    RIGHT_SPEED = 100
+    LEFT_SPEED = 90
 
     turn_track = 0.0
     TIME_PER_DEGREE = 0.010278
@@ -220,7 +220,6 @@ class  GoPiggy(pigo.Pigo):
 
     #Moving slowly forever but still scanning
     def cruise(self):
-        self.setSpeed(90, 100)
         # Have the robot drive forward without end
         while self.frontClear():
             print("It is clear. Time to fly!")
