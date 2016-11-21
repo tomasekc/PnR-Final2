@@ -221,7 +221,7 @@ class  GoPiggy(pigo.Pigo):
 
     #Moving slowly forever but still scanning
     def cruise(self):
-        self.setSpeed(60, 70)
+        self.setSpeed(110, 50)
         # Have the robot drive forward without end
         while self.frontClear():
             print("It is clear. Time to fly!")
