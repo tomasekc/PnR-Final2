@@ -15,7 +15,7 @@ class  GoPiggy(pigo.Pigo):
     MIDPOINT = 83
     STOP_DIST = 20
     RIGHT_SPEED = 200
-    LEFT_SPEED = 190
+    LEFT_SPEED = 180
 
     turn_track = 0.0
     TIME_PER_DEGREE = 0.010278
@@ -220,6 +220,7 @@ class  GoPiggy(pigo.Pigo):
 
     #Moving slowly forever but still scanning
     def cruise(self):
+        self.setSpeed(80, 100)
         # Have the robot drive forward without end
         while self.frontClear():
             print("It is clear. Time to fly!")
@@ -245,7 +246,7 @@ class  GoPiggy(pigo.Pigo):
                     #TODO: Replace the '45' with the new smarter variable
                     self.turnL(45)
                 elif answer == "right":
-                    #TODO: Same idea...
+                    #TODO: Same idea...change it with the smarter variable
                     self.turnR(45)
             #elif answer == "There is no where to go":
                 #print("Since there's no where to go, I'll back up")
