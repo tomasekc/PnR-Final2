@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66f0e80a-096a-43e5-81a2-c0f7565787d7" name="Default" comment="">
+    <list default="true" id="66f0e80a-096a-43e5-81a2-c0f7565787d7" name="Default" comment="There's something wrong with my nav method. It starts to cruise forward but turns">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student.py" afterPath="$PROJECT_DIR$/student.py" />
     </list>
@@ -27,8 +27,8 @@
       <file leaf-file-name="student.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/student.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="249" column="37" selection-start-line="249" selection-start-column="37" selection-end-line="249" selection-end-column="37" />
+            <state relative-caret-position="476">
+              <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -61,9 +61,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="269" />
-    <option name="y" value="89" />
+    <option name="y" value="81" />
     <option name="width" value="1435" />
-    <option name="height" value="869" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -346,11 +346,25 @@
       <option name="project" value="LOCAL" />
       <updated>1479481162054</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="There's something wrong with my nav method. It starts to cruise forward but turns">
+      <created>1479740481843</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1479740481843</updated>
+    </task>
+    <task id="LOCAL-00013" summary="There's something wrong with my nav method. It starts to cruise forward but turns">
+      <created>1479741967846</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1479741967846</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="269" y="89" width="1435" height="869" extended-state="0" />
+    <frame x="269" y="81" width="1435" height="877" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -390,7 +404,8 @@
     <MESSAGE value="new turn methods" />
     <MESSAGE value="changed set speed method" />
     <MESSAGE value="changing set speeds in cruise method" />
-    <option name="LAST_COMMIT_MESSAGE" value="changing set speeds in cruise method" />
+    <MESSAGE value="There's something wrong with my nav method. It starts to cruise forward but turns" />
+    <option name="LAST_COMMIT_MESSAGE" value="There's something wrong with my nav method. It starts to cruise forward but turns" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -461,8 +476,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/student.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="249" column="37" selection-start-line="249" selection-start-column="37" selection-end-line="249" selection-end-column="37" />
+        <state relative-caret-position="476">
+          <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

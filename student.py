@@ -47,6 +47,7 @@ class  GoPiggy(pigo.Pigo):
                 "3": ("Dance", self.dance),
                 "4": ("Calibrate servo", self.calibrate),
                 "5": ("Status", self.currentStatus),
+                "6": ("Cruise", self.cruise),
                 "q": ("Quit", quit)
                 }
         # loop and print the menu...
