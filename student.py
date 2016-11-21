@@ -14,8 +14,8 @@ class  GoPiggy(pigo.Pigo):
     # You may want to add a variable to store your default speed
     MIDPOINT = 83
     STOP_DIST = 20
-    RIGHT_SPEED = 100
-    LEFT_SPEED = 90
+    RIGHT_SPEED = 200
+    LEFT_SPEED = 190
 
     turn_track = 0.0
     TIME_PER_DEGREE = 0.010278
@@ -232,7 +232,7 @@ class  GoPiggy(pigo.Pigo):
     def nav(self):
         print("Piggy nav")
         ##### WRITE YOUR FINAL PROJECT HERE
-        #TODO: If while loop fails, check for other paths
+        #TODO: Replace choosePath with a method that's smarter
         # loop: check that it's clear
         while self.isClear():
             # Let's go forward a lot
@@ -242,8 +242,10 @@ class  GoPiggy(pigo.Pigo):
         # Choosing the direction
                 answer = self.superChoosePath()
                 if answer == "left":
+                    #TODO: Replace the '45' with the new smarter variable
                     self.turnL(45)
                 elif answer == "right":
+                    #TODO: Same idea...
                     self.turnR(45)
             #elif answer == "There is no where to go":
                 #print("Since there's no where to go, I'll back up")
