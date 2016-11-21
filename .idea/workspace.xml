@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="66f0e80a-096a-43e5-81a2-c0f7565787d7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/student.py" afterPath="$PROJECT_DIR$/student.py" />
     </list>
     <ignored path="PnR-Final2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -409,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479742611097</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Cruise method speed changes - still cant find the balance">
+      <created>1479742656586</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1479742656586</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -455,7 +461,8 @@
     <MESSAGE value="changing set speeds in cruise method" />
     <MESSAGE value="There's something wrong with my nav method. It starts to cruise forward but turns" />
     <MESSAGE value="Cruise method speed changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cruise method speed changes" />
+    <MESSAGE value="Cruise method speed changes - still cant find the balance" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cruise method speed changes - still cant find the balance" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
