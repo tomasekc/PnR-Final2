@@ -17,6 +17,7 @@ class  GoPiggy(pigo.Pigo):
     RIGHT_SPEED = 200
     LEFT_SPEED = 180
 
+    # NEW TURN DETAILS
     turn_track = 0.0
     TIME_PER_DEGREE = 0.010278
     TURN_MODIFIER = .5
@@ -101,20 +102,23 @@ class  GoPiggy(pigo.Pigo):
 
 
 
+    # HOW'S THE ROBOT DOING?
     def currentStatus(self):
         print("My power is at:" + str(volt()) + "volts")
         print('My MIDPOINT is set to: ' + str(self.MIDPOINT))
         print('I get scared when things are closer than ' + str(self.STOP_DIST) + 'cm')
         print('Left speed set to: ' + str(self.LEFT_SPEED) + ' // Right set to: ' + str(self.RIGHT_SPEED))
+        # Return the headset back to midpoint and return the distance
         servo(self.MIDPOINT)
         time.sleep(.1)
-        return us_dist(15)
+        scan = us_dist(15)
+        print("The distance is: " + str(us_dist(15)))
+
 
 
     # A SIMPLE DANCE ALGORITHM
     def dance(self):
         print("Piggy dance")
-        ##### WRITE YOUR FIRST PROJECT HERE
         # Check if its clear using superClear method
         print("Is it clear?")
         if(self.superClear()):
@@ -137,6 +141,7 @@ class  GoPiggy(pigo.Pigo):
 
 
 
+    # SCANNING TO THE FRONT, RIGHT, AND THEN LEFT
     def superClear(self):
         # Check front distance
         servo(self.MIDPOINT)
@@ -172,6 +177,8 @@ class  GoPiggy(pigo.Pigo):
         return True
 
 
+
+    # ONLY CHECKING THE VERY FRONT AND NOTHING ELSE
     def frontClear(self) -> bool:
         for x in range((self.MIDPOINT - 3), (self.MIDPOINT + 3), 5):
             servo(x)
@@ -193,6 +200,8 @@ class  GoPiggy(pigo.Pigo):
         return True
 
 
+
+    # CHOOSING A PATH THAT ACCOUNTS FOR STOP DISTANCES
     def superChoosePath(self) -> str:
         print('Considering options...')
         if self.isClear():
@@ -219,9 +228,10 @@ class  GoPiggy(pigo.Pigo):
             #return "There is no where to go"
 
 
-    #Moving slowly forever but still scanning
+
+    #  MOVING SLOWLY FOREVER BUT STILL SCANNING
     def cruise(self):
-        self.setSpeed(110, 50)
+        self.setSpeed(110, 50) #TODO: Continue working here
         # Have the robot drive forward without end
         while self.frontClear():
             print("It is clear. Time to fly!")
@@ -230,10 +240,10 @@ class  GoPiggy(pigo.Pigo):
                 self.stop()
 
 
+
     # AUTONOMOUS DRIVING
     def nav(self):
         print("Piggy nav")
-        ##### WRITE YOUR FINAL PROJECT HERE
         #TODO: Replace choosePath with a method that's smarter
         # loop: check that it's clear
         while self.isClear():
