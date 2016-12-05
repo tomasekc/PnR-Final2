@@ -93,6 +93,70 @@ class  GoPiggy(pigo.Pigo):
 
 
 
+    # REPLACEMENT TURN METHOD. Find the best option to turn
+    def kenny(self):
+        # Activate our scanner!
+        self.wideScan()
+        # count will keep track of contigeous positive readings
+        count = 0
+        # list of all the open paths we detect
+        option = [0]
+        # YOU DECIDE: What do we add to STOP_DIST when looking for a path fwd?
+        SAFETY_BUFFER = 15
+        # YOU DECIDE: what increment do you have your wideScan set to?
+        INC = 2
+
+        ###########################
+        ######### BUILD THE OPTIONS
+        # loop from the 60 deg right of our middle to 60 deg left of our middle
+        for x in range(self.MIDPOINT - 60, self.MIDPOINT + 60):
+            # ignore all blank spots in the list
+            if self.scan[x]:
+                # add 30 if you want, this is an extra safety buffer
+                if self.scan[x] > (self.STOP_DIST + SAFETY_BUFFER):
+                    count += 1
+                # if this reading isn't safe...
+                else:
+                    # aww nuts, I have to reset the count, this path won't work
+                    count = 0
+                # YOU DECIDE: Is 16 degrees the right size to consider as a safe window?
+                if count > (16 / INC) - 1:
+                    # SUCCESS! I've found enough positive readings in a row
+                    print("---FOUND OPTION: from " + str(x - 16) + " to " + str(x))
+                    # set the counter up again for next time
+                    count = 0
+                    # add this option to the list
+                    option.append(x - 8)
+
+        ####################################
+        ############## PICK FROM THE OPTIONS - experimental
+
+        # The biggest angle away from our midpoint we could possibly see is 90
+        bestoption = 90
+        # the turn it would take to get us aimed back toward the exit - experimental
+        ideal = -self.turn_track
+        print("\nTHINKING. Ideal turn: " + str(ideal) + " degrees\n")
+        # x will iterate through all the angles of our path options
+        for x in option:
+            # skip our filler option
+            if x != 0:
+                # the change to the midpoint needed to aim at this path
+                turn = self.MIDPOINT - x
+                # state our logic so debugging is easier
+                print("\nPATH at  " + str(x) + " degrees means a turn of " + str(turn))
+                # if this option is closer to our ideal than our current best option...
+                if abs(ideal - bestoption) > abs(ideal - turn):
+                    # store this turn as the best option
+                    bestoption = turn
+        if bestoption > 0:
+            # CHANGE AS NEEDED. Can either use input (for tests), or print (for timed runs)
+            input("\nABOUT TO TURN RIGHT BY: " + str(bestoption) + " degrees")
+        else:
+            input("\nABOUT TO TURN LEFT BY: " + str(abs(bestoption)) + " degrees")
+        return bestoption
+
+
+
     def setSpeed(self, left, right):
         print("Left speed: " + str(left))
         print("Right speed: " + str(right))
@@ -244,26 +308,36 @@ class  GoPiggy(pigo.Pigo):
     # AUTONOMOUS DRIVING
     def nav(self):
         print("Piggy nav")
-        #TODO: Replace choosePath with a method that's smarter
-        # loop: check that it's clear
-        while self.isClear():
-            # Let's go forward a lot
-            self.cruise()
-            if not self.frontClear():
-                self.superChoosePath()
-        # Choosing the direction
-                answer = self.superChoosePath()
-                if answer == "left":
-                    #TODO: Replace the '45' with the new smarter variable
-                    self.turnL(45)
-                elif answer == "right":
-                    #TODO: Same idea...change it with the smarter variable
-                    self.turnR(45)
-            #elif answer == "There is no where to go":
-                #print("Since there's no where to go, I'll back up")
-                #self.encB(20)
-                #self.encL(15)
-                self.nav()
+        while True:
+            # cruise forward
+            if self.isClear():
+                self.cruise()
+        # if I had to stop, pick a better path
+        turn_target = self.kenny()
+        if turn_target < 0:
+            self.turnR(abs(turn_target))
+        else:
+            self.turnL(turn_target)
+
+                ###################################################
+                ######THIS IS THE OLD STUFF
+                #######################################################
+
+                # Choosing the direction
+                #answer = self.superChoosePath()
+                #if answer == "left":
+                    #self.turnL(45)
+                    #self.turnL(turn_target)
+                #elif answer == "right":
+                    #self.turnR(45)
+                    #self.turnR(turn_target)
+                # If the robot goes into a tight space and cannot turn
+                #elif answer == "There is no where to go":
+                    #print("Since there's no where to go, I'll back up")
+                    #self.encB(20)
+                    #self.encL(15)
+                #self.nav()
+
 
 
 
