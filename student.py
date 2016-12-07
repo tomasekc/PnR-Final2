@@ -300,8 +300,7 @@ class  GoPiggy(pigo.Pigo):
         while self.frontClear():
             print("It is clear. Time to fly!")
             fwd()
-            if not self.frontClear():
-                self.stop()
+        self.stop()
 
 
 
