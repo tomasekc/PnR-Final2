@@ -104,7 +104,7 @@ class  GoPiggy(pigo.Pigo):
         # YOU DECIDE: What do we add to STOP_DIST when looking for a path fwd?
         SAFETY_BUFFER = 15
         # YOU DECIDE: what increment do you have your wideScan set to?
-        INC = 2
+        INC = 3
 
         ###########################
         ######### BUILD THE OPTIONS
