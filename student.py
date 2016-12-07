@@ -311,12 +311,12 @@ class  GoPiggy(pigo.Pigo):
             # cruise forward
             if self.isClear():
                 self.cruise()
-        # if I had to stop, pick a better path
-        turn_target = self.kenny()
-        if turn_target < 0:
-            self.turnR(abs(turn_target))
-        else:
-            self.turnL(turn_target)
+            # if I had to stop, pick a better path
+            turn_target = self.kenny()
+            if turn_target < 0:
+                self.turnR(abs(turn_target))
+            else:
+                self.turnL(turn_target)
 
                 ###################################################
                 ######THIS IS THE OLD STUFF
