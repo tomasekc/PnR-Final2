@@ -346,16 +346,16 @@ class  GoPiggy(pigo.Pigo):
             answer = self.superChoosePath()
             if answer == "far left":
                 self.turnL(45)
-                self.turnL(turn_target)
+                #self.turnL(turn_target)
             if answer == "left":
                 self.turnL(20)
-                self.turnL(turn_target)
+                #self.turnL(turn_target)
             if answer == "right":
                 self.turnR(20)
-                self.turnR(turn_target)
+                #self.turnR(turn_target)
             if answer == "far right":
                 self.turnR(45)
-                self.turnR(turn_target)
+                #self.turnR(turn_target)
                 # If the robot goes into a tight space and cannot turn
                 #elif answer == "There is no where to go":
                     #print("Since there's no where to go, I'll back up")
