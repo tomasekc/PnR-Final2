@@ -272,24 +272,44 @@ class  GoPiggy(pigo.Pigo):
             return "fwd"
         else:
             self.wideScan()
+        # Attempt to use four different options instead of two
+        avgFarRight = 0
         avgRight = 0
         avgLeft = 0
-        for x in range(self.MIDPOINT - 60, self.MIDPOINT):
+        avgFarLeft = 0
+        # This is for the far right
+        for x in range(self.MIDPOINT - 60, self.MIDPOINT - 29):
+            if self.scan[x]:
+                avgFarRight += self.scan[x]
+        avgFarRight /= 30
+        print('The average dist on the far right is ' + str(avgFarRight) + 'cm')
+        # This is for the near right
+        for x in range(self.MIDPOINT - 30, self.MIDPOINT):
             if self.scan[x]:
                 avgRight += self.scan[x]
-        avgRight /= 60
-        print('The average dist on the right is ' + str(avgRight) + 'cm')
-        for x in range(self.MIDPOINT, self.MIDPOINT + 60):
+        avgRight /= 30
+        print('The average dist on the near right is ' + str(avgRight) + ' cm')
+        # This is for the near left
+        for x in range(self.MIDPOINT, self.MIDPOINT + 30):
             if self.scan[x]:
                 avgLeft += self.scan[x]
-        avgLeft /= 60
-        print('The average dist on the left is ' + str(avgLeft) + 'cm')
-        if avgRight > avgLeft: #and avgRight > self.STOP_DIST:
-            return "right"
-        if avgLeft > avgRight: #and avgLeft > self.STOP_DIST:
-            return "left"
-        #elif avgRight < self.STOP_DIST or avgLeft < self.STOP_DIST:
-            #return "There is no where to go"
+        avgLeft /= 30
+        print('The average dist on the near left is ' + str(avgLeft) + ' cm')
+        # This is for the far Left
+        for x in range(self.MIDPOINT + 31, self.MIDPOINT + 60):
+            if self.scan[x]:
+                avgFarLeft += self.scan[x]
+        avgFarLeft /= 30
+        print('The average dist on the far left is ' + str(avgFarLeft) + 'cm')
+        # Time to call whatever is the best choice
+        if avgFarRight > avgFarLeft and avgFarRight > avgRight and avgFarRight > avgLeft:
+            return "far right"
+        if avgRight > avgFarRight and avgRight > avgLeft and avgRight > avgFarLeft:
+            return "near right"
+        if avgLeft > avgFarLeft and avgLeft > avgRight and avgLeft > avgFarRight:
+            return "near left"
+        if avgFarLeft > avgFarRight and avgFarLeft > avgRight and avgFarLeft > avgLeft:
+            return "far left"
 
 
 
@@ -312,24 +332,30 @@ class  GoPiggy(pigo.Pigo):
             if self.isClear():
                 self.cruise()
             # if I had to stop, pick a better path
-            turn_target = self.kenny()
-            if turn_target < 0:
-                self.turnR(abs(turn_target))
-            else:
-                self.turnL(turn_target)
+            #turn_target = self.kenny()
+            #if turn_target < 0:
+                #self.turnR(abs(turn_target))
+            #else:
+                #self.turnL(turn_target)
 
                 ###################################################
                 ######THIS IS THE OLD STUFF
                 #######################################################
 
-                # Choosing the direction
-                #answer = self.superChoosePath()
-                #if answer == "left":
-                    #self.turnL(45)
-                    #self.turnL(turn_target)
-                #elif answer == "right":
-                    #self.turnR(45)
-                    #self.turnR(turn_target)
+            # Choosing the direction
+            answer = self.superChoosePath()
+            if answer == "far left":
+                self.turnL(45)
+                self.turnL(turn_target)
+            if answer == "left":
+                self.turnL(20)
+                self.turnL(turn_target)
+            if answer == "right":
+                self.turnR(20)
+                self.turnR(turn_target)
+            if answer == "far right":
+                self.turnR(45)
+                self.turnR(turn_target)
                 # If the robot goes into a tight space and cannot turn
                 #elif answer == "There is no where to go":
                     #print("Since there's no where to go, I'll back up")
