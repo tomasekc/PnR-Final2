@@ -166,6 +166,16 @@ class  GoPiggy(pigo.Pigo):
 
 
 
+    # A SAFETY PRECAUTION
+    def backUp(self):
+        if us_dist(15) < 25:
+            print("I don't think it's safe. Backing up for half a second")
+            bwd()
+            time.sleep(.5)
+            self.stop()
+
+
+
     # HOW'S THE ROBOT DOING?
     def currentStatus(self):
         print("My power is at:" + str(volt()) + "volts")
@@ -334,6 +344,7 @@ class  GoPiggy(pigo.Pigo):
             # cruise forward
             if self.isClear():
                 self.cruise()
+            self.backUp()
             # if I had to stop, pick a better path
             #turn_target = self.kenny()
             #if turn_target < 0:
