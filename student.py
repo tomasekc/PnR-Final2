@@ -180,6 +180,7 @@ class  GoPiggy(pigo.Pigo):
 
 
 
+
     # A SIMPLE DANCE ALGORITHM
     def dance(self):
         print("Piggy dance")
@@ -310,6 +311,8 @@ class  GoPiggy(pigo.Pigo):
             return "near left"
         if avgFarLeft > avgFarRight and avgFarLeft > avgRight and avgFarLeft > avgLeft:
             return "far left"
+        else:
+            return "stuck"
 
 
 
@@ -355,6 +358,8 @@ class  GoPiggy(pigo.Pigo):
                 #self.turnR(turn_target)
             if answer == "far right":
                 self.turnR(45)
+            if answer == "stuck":
+                self.encB(10)
                 #self.turnR(turn_target)
                 # If the robot goes into a tight space and cannot turn
                 #elif answer == "There is no where to go":
