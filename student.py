@@ -168,10 +168,10 @@ class  GoPiggy(pigo.Pigo):
 
     # A SAFETY PRECAUTION
     def backUp(self):
-        if us_dist(15) < 5:
-            print("I don't think it's safe. Backing up for half a second")
+        if us_dist(15) < 2:
+            print("I don't think it's safe. Backing up for 3/10 a second")
             bwd()
-            time.sleep(.5)
+            time.sleep(.3)
             self.stop()
 
 
