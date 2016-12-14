@@ -255,7 +255,7 @@ class  GoPiggy(pigo.Pigo):
 
     # ONLY CHECKING THE VERY FRONT AND NOTHING ELSE
     def frontClear(self) -> bool:
-        for x in range((self.MIDPOINT - 3), (self.MIDPOINT + 3), 5):
+        for x in range((self.MIDPOINT - 2), (self.MIDPOINT + 2), 4):
             servo(x)
             time.sleep(.05)
             scan1 = us_dist(15)
