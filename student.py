@@ -342,7 +342,7 @@ class  GoPiggy(pigo.Pigo):
         print("Piggy nav")
         while True:
             # cruise forward
-            if self.isClear():
+            while self.isClear():
                 self.encF(10)
             self.backUp()
             # if I had to stop, pick a better path
