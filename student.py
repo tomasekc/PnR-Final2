@@ -150,9 +150,9 @@ class  GoPiggy(pigo.Pigo):
                     bestoption = turn
         if bestoption > 0:
             # CHANGE AS NEEDED. Can either use input (for tests), or print (for timed runs)
-            input("\nABOUT TO TURN RIGHT BY: " + str(bestoption) + " degrees")
+            print("\nABOUT TO TURN RIGHT BY: " + str(bestoption) + " degrees")
         else:
-            input("\nABOUT TO TURN LEFT BY: " + str(abs(bestoption)) + " degrees")
+            print("\nABOUT TO TURN LEFT BY: " + str(abs(bestoption)) + " degrees")
         return bestoption
 
 
@@ -168,7 +168,7 @@ class  GoPiggy(pigo.Pigo):
 
     # A SAFETY PRECAUTION
     def backUp(self):
-        if us_dist(15) < 2:
+        if us_dist(15) < 3:
             print("I don't think it's safe. Backing up for .3 second")
             bwd()
             time.sleep(.3)
