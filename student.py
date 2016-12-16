@@ -343,7 +343,7 @@ class  GoPiggy(pigo.Pigo):
         while True:
             # cruise forward
             if self.isClear():
-                self.cruise()
+                self.encF(10)
             self.backUp()
             # if I had to stop, pick a better path
             turn_target = self.kenny()
