@@ -346,34 +346,34 @@ class  GoPiggy(pigo.Pigo):
                 self.cruise()
             self.backUp()
             # if I had to stop, pick a better path
-            #turn_target = self.kenny()
-            #if turn_target < 0:
-                #self.turnR(abs(turn_target))
-            #else:
-                #self.turnL(turn_target)
+            turn_target = self.kenny()
+            if turn_target < 0:
+                self.turnR(abs(turn_target))
+            else:
+                self.turnL(turn_target)
 
                 ###################################################
                 ######THIS IS THE OLD STUFF
                 #######################################################
 
             # Choosing the direction
-            answer = self.superChoosePath()
-            print("\n---------------------------")
-            print("\nI'M GOING TO THE TURN TO THE: " + answer)
-            print("\n---------------------------")
-            if answer == "far left":
-                self.turnL(70)
+            #answer = self.superChoosePath()
+            #print("\n---------------------------")
+            #print("\nI'M GOING TO THE TURN TO THE: " + answer)
+            #print("\n---------------------------")
+            #if answer == "far left":
+                #self.turnL(70)
                 #self.turnL(turn_target)
-            if answer == "near left":
-                self.turnL(40)
+            #if answer == "near left":
+                #self.turnL(40)
                 #self.turnL(turn_target)
-            if answer == "near right":
-                self.turnR(40)
+            #if answer == "near right":
+                #self.turnR(40)
                 #self.turnR(turn_target)
-            if answer == "far right":
-                self.turnR(70)
-            if answer == "stuck":
-                self.encB(10)
+            #if answer == "far right":
+                #self.turnR(70)
+            #if answer == "stuck":
+                #self.encB(10)
                 #self.turnR(turn_target)
                 # If the robot goes into a tight space and cannot turn
                 #elif answer == "There is no where to go":
