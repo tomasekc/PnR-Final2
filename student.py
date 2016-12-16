@@ -362,16 +362,16 @@ class  GoPiggy(pigo.Pigo):
             print("\nI'M GOING TO THE TURN TO THE: " + answer)
             print("\n---------------------------")
             if answer == "far left":
-                self.turnL(90)
+                self.turnL(70)
                 #self.turnL(turn_target)
             if answer == "near left":
-                self.turnL(45)
+                self.turnL(40)
                 #self.turnL(turn_target)
             if answer == "near right":
-                self.turnR(45)
+                self.turnR(40)
                 #self.turnR(turn_target)
             if answer == "far right":
-                self.turnR(90)
+                self.turnR(70)
             if answer == "stuck":
                 self.encB(10)
                 #self.turnR(turn_target)
